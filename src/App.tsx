@@ -1,5 +1,6 @@
 //import the style sheets
-import './css/App.css';
+import './css/bootstrap4-hello-world.css'
+import './css/App.css'
 
 //import components from libraries
 import React from 'react';
@@ -11,23 +12,29 @@ import Col from 'react-bootstrap/Col'
 
 const App: React.FC = () => {
   return (
-    <body>
-      <div className="App">
+    <body className='App'>
+      <div className="App-header bg-dark navbar-dark text-white pt-5">
       <Container>
         <Row>
-          <Col lg={3}>1 of 2</Col>
+          <Col lg={3}></Col>
           <Col>
-            <h2>
+            <h1 className='display-2 text-light text-uppercase'>
               Repunsitory.com
-            </h2>
+            </h1>
           </Col>
         </Row>
         <Row>
-          <Col>1 of 3</Col>
-          <Col lg={8} md={6}>
+          <div><br></br></div>
+        </Row>
+        <Row>
+          <Col className='.col-8'>
             <Pun />
           </Col>
-          <Col>3 of 3</Col>
+        </Row>
+        <Row>
+          <Col>
+          <div></div>
+          </Col>
         </Row>
       </Container>
       </div>
