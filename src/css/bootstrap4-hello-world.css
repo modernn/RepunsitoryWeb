@@ -398,6 +398,11 @@ mark,
   max-width: 100%;
   height: auto; }
 
+.img-fluid-icon {
+  max-width: 5vh;
+  height: 5vh; }
+  
+
 .img-thumbnail {
   padding: 0.25rem;
   background-color: #fff;

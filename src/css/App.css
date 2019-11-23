@@ -1,10 +1,12 @@
 .App {
-  text-align: center;
   min-height: 100vh;
+  background-color: #2a2668;
 }
 
 .App-logo {
-  height: 40vmin;
+  height: 20vmin;
+  align-content: left;
+  justify-content: flex-start;
 }
 
 .App-header {
@@ -15,6 +17,10 @@
   justify-content: center;
   font-size: calc(10px + 2vmin);
   color: white;
+}
+
+.Next-pun {
+  align-self: flex-end;
 }
 
 .App-link {

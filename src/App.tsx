@@ -2,6 +2,10 @@
 import './css/bootstrap4-hello-world.css'
 import './css/App.css'
 
+//import images
+import Logo from './images/Repunsitory-Logo.svg'
+import Banner from './images/Repunsitory-Banner.svg'
+
 //import components from libraries
 import React from 'react';
 import Pun from './Pun'
@@ -13,23 +17,24 @@ import Col from 'react-bootstrap/Col'
 const App: React.FC = () => {
   return (
     <body className='App'>
-      <div className="App-header bg-dark navbar-dark text-white pt-5">
+      <div className="body navbar-dark text-white pt-5">
       <Container>
         <Row>
-          <Col lg={3}></Col>
-          <Col>
-            <h1 className='display-2 text-light text-uppercase'>
-              Repunsitory.com
-            </h1>
+          
+          <Col xl={10} lg={9} md={6} sm={4}>
+            <img src={Banner} className='' alt='banner'></img>
           </Col>
+          
         </Row>
         <Row>
           <div><br></br></div>
         </Row>
         <Row>
-          <Col className='.col-8'>
+          <Col className='col-2' />
+          <Col className='col'>
             <Pun />
           </Col>
+          <Col className='col-2' />
         </Row>
         <Row>
           <Col>
