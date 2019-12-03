@@ -3,12 +3,12 @@ import './css/bootstrap4-hello-world.css'
 import './css/App.css'
 
 //import images
-import Logo from './images/Repunsitory-Logo.svg'
+//import Logo from './images/Repunsitory-Logo.svg'
 import Banner from './images/Repunsitory-Banner.svg'
 
 //import components from libraries
 import React from 'react';
-import Pun from './Pun'
+import PunCard from './PunCard'
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row'
 import Col from 'react-bootstrap/Col'
@@ -20,21 +20,19 @@ const App: React.FC = () => {
       <div className="body navbar-dark text-white pt-5">
       <Container>
         <Row>
-          
-          <Col xl={10} lg={9} md={6} sm={4}>
-            <img src={Banner} className='' alt='banner'></img>
+          <Col>
+            <img src={Banner} className='img-fluid' alt='banner'></img>
           </Col>
-          
         </Row>
         <Row>
           <div><br></br></div>
         </Row>
         <Row>
-          <Col className='col-2' />
+          <Col lg={2} sm={0}/>
           <Col className='col'>
-            <Pun />
+            <PunCard />
           </Col>
-          <Col className='col-2' />
+          <Col lg={2} sm={0}/>
         </Row>
         <Row>
           <Col>
