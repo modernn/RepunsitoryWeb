@@ -5,13 +5,15 @@
   "dependencies": {
     "@types/jest": "24.0.23",
     "@types/node": "12.12.11",
-    "@types/react": "16.9.12",
     "@types/react-dom": "16.9.4",
+    "axios": "^0.19.1",
     "react": "^16.12.0",
     "react-bootstrap": "^1.0.0-beta.16",
     "react-dom": "^16.12.0",
     "react-scripts": "3.2.0",
-    "typescript": "3.7.2"
+    "request": "^2.88.0",
+    "typescript": "3.7.2",
+    "unirest": "^0.6.0"
   },
   "scripts": {
     "start": "react-scripts start",
@@ -33,5 +35,9 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "@types/react": "^16.9.17",
+    "@types/request": "^2.48.4"
   }
 }

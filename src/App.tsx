@@ -1,9 +1,14 @@
 //import the style sheets
-import './css/App.css';
+import './css/bootstrap4-hello-world.css'
+import './css/App.css'
+
+//import images
+//import Logo from './images/Repunsitory-Logo.svg'
+import Banner from './images/Repunsitory-Banner.svg'
 
 //import components from libraries
 import React from 'react';
-import Pun from './Pun'
+import PunCard from './PunCard'
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row'
 import Col from 'react-bootstrap/Col'
@@ -11,23 +16,28 @@ import Col from 'react-bootstrap/Col'
 
 const App: React.FC = () => {
   return (
-    <body>
-      <div className="App">
+    <body className='App'>
+      <div className="body navbar-dark text-white pt-5">
       <Container>
         <Row>
-          <Col lg={3}>1 of 2</Col>
           <Col>
-            <h2>
-              Repunsitory.com
-            </h2>
+            <img src={Banner} className='img-fluid' alt='banner'></img>
           </Col>
         </Row>
         <Row>
-          <Col>1 of 3</Col>
-          <Col lg={8} md={6}>
-            <Pun />
+          <div><br></br></div>
+        </Row>
+        <Row>
+          <Col lg={2} sm={0}/>
+          <Col className='col'>
+            <PunCard />
           </Col>
-          <Col>3 of 3</Col>
+          <Col lg={2} sm={0}/>
+        </Row>
+        <Row>
+          <Col>
+          <div></div>
+          </Col>
         </Row>
       </Container>
       </div>
