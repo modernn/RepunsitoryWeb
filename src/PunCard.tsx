@@ -51,7 +51,7 @@ const PunCard: React.FC = () => {
             </ButtonGroup>
           </Col>
           <Col> 
-              <Button className='float-right '>
+              <Button onClick={getPun} className='float-right '>
               <img src={NewPun} className='img-fluid-icon' alt='newpun'></img>
               </Button>
           </Col>

@@ -18,8 +18,8 @@ const apiClient = axios.create({
 export const getNewRandomPun = async () => {
   try {
     const response = await apiClient.get<Pun>("/GetRandom");
-    const user = response.data;
-    return user;
+    const pun = response.data;
+    return pun;
   } catch (err) {
     // if (err && err.response) {
     //   const axiosError = err as AxiosError<ServerError>;
@@ -30,3 +30,32 @@ export const getNewRandomPun = async () => {
   }
 };
 
+export const upvotePun = async (punGuid:string) => {
+    try {
+      const response = await apiClient.get<Pun>("/GetRandom");
+      const pun = response.data;
+      return pun;
+    } catch (err) {
+      // if (err && err.response) {
+      //   const axiosError = err as AxiosError<ServerError>;
+      //   return Json.axiosError.response.data;
+      // }
+  
+      throw err;
+    }
+  };
+
+export const downvotePun = async (punGuid:string) => {
+try {
+    const response = await apiClient.get<Pun>("/GetRandom");
+    const pun = response.data;
+    return pun;
+} catch (err) {
+    // if (err && err.response) {
+    //   const axiosError = err as AxiosError<ServerError>;
+    //   return Json.axiosError.response.data;
+    // }
+
+    throw err;
+}
+};
