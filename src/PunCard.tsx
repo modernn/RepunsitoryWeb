@@ -4,7 +4,8 @@ import Like from './images/RepunsitoryIcons_Like-NoBorder-Light.svg'
 import Dislike from './images/RepunsitoryIcons_Dislike-NoBorder-Light.svg'
 import NewPun from './images/RepunsitoryIcons_NewPun-NoBorder-Light.svg'
 
-import React from 'react'
+import Pun from './Pun'
+import React, { useEffect, useState  } from 'react'
 import Card from 'react-bootstrap/Card'
 import Button from 'react-bootstrap/Button'
 import ButtonGroup from 'react-bootstrap/ButtonGroup'
@@ -12,19 +13,29 @@ import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row'
 import Col from 'react-bootstrap/Col'
 // eslint-disable-next-line
-import {PunApiService} from './PunApiService'
+import {getNewRandomPun} from './PunApiService'
 
-
-const Pun: React.FC = () => {
+const PunCard: React.FC = () => {
   // eslint-disable-next-line
-  var thisPun = PunApiService.getNewRandomPun();
+  const [pun, setPun] = useState<Pun | undefined>(undefined)
+
+  useEffect(() => {
+    if (!pun) getPun()
+  }, [pun])
+
+  const getPun = async () => {
+    const randomPun = await getNewRandomPun()
+
+    setPun(randomPun)
+  }
+
   return (
     <Container>
       <Card className='card'>
         <Row>
           <div className='card-body'>
               <p className='card-subtitle text-dark text-center '>
-                Pun goes here
+                {pun && pun.punContent}
               </p>
           </div>
         </Row>
@@ -51,4 +62,4 @@ const Pun: React.FC = () => {
   );
 }
 
-export default Pun;
+export default PunCard;

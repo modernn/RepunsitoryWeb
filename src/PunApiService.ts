@@ -1,27 +1,32 @@
-import * as request from 'request'
+import axios from "axios";
+import Pun from './Pun'
 
-export class PunApiService{
-    static getNewRandomPun(){
-        request.get("https://repunsitoryapi.azurewebsites.net/api/Puns/GetRandom",(response: any, body: any) =>{
-            return body;
-        })
-    }
-    static upvotePun(punGuid:string){
-        request.put("https://repunsitoryapi.azurewebsites.net/api/Puns/Upvote/"+ punGuid,(error:any,response:any, body: any)=>{
-            if(response!=null)
-            {
-                return body;
-            }
-            return error;
-        })
-    }
-    static downvotePun(punGuid:string){
-        request.put("https://repunsitoryapi.azurewebsites.net/api/Puns/Downvote/"+ punGuid,(error:any,response:any, body:any)=>{
-            if(response!=null)
-            {
-                return body;
-            }
-            return error;
-        })
-    }
-}
+type ServerError = {
+  code: string;
+  description: string;
+};
+
+const apiClient = axios.create({
+  baseURL: "https://repunsitoryapi.azurewebsites.net/api/Puns",
+  responseType: "json",
+  headers: {
+    "Content-Type": "application/json"
+  }
+});
+
+
+export const getNewRandomPun = async () => {
+  try {
+    const response = await apiClient.get<Pun>("/GetRandom");
+    const user = response.data;
+    return user;
+  } catch (err) {
+    // if (err && err.response) {
+    //   const axiosError = err as AxiosError<ServerError>;
+    //   return Json.axiosError.response.data;
+    // }
+
+    throw err;
+  }
+};
+
