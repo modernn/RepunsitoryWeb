@@ -11,16 +11,20 @@ import ButtonGroup from 'react-bootstrap/ButtonGroup'
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row'
 import Col from 'react-bootstrap/Col'
+// eslint-disable-next-line
+import {PunApiService} from './PunApiService'
 
 
 const Pun: React.FC = () => {
+  // eslint-disable-next-line
+  var thisPun = PunApiService.getNewRandomPun();
   return (
     <Container>
       <Card className='card'>
         <Row>
           <div className='card-body'>
               <p className='card-subtitle text-dark text-center '>
-                  Punny things go here!!
+                Pun goes here
               </p>
           </div>
         </Row>
