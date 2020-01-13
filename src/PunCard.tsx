@@ -13,10 +13,10 @@ import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row'
 import Col from 'react-bootstrap/Col'
 // eslint-disable-next-line
-import {getNewRandomPun} from './PunApiService'
+import {getNewRandomPun,upvotePun, downvotePun} from './PunApiService'
 
 const PunCard: React.FC = () => {
-  // eslint-disable-next-line
+
   const [pun, setPun] = useState<Pun | undefined>(undefined)
 
   useEffect(() => {
@@ -28,7 +28,14 @@ const PunCard: React.FC = () => {
 
     setPun(randomPun)
   }
-
+  const Upvote = async() =>{
+    const randomPun = await upvotePun(pun && pun.myGuid)
+    setPun(randomPun)
+  }
+  const Downvote = async() =>{
+    const randomPun = await downvotePun(pun && pun.myGuid)
+    setPun(randomPun)
+  }
   return (
     <Container>
       <Card className='card'>
@@ -43,10 +50,10 @@ const PunCard: React.FC = () => {
           <Col>
             <ButtonGroup>
               <Button>
-                <img src={Like} className='img-fluid-icon' alt='like'></img>
+                <img src={Like} onClick={Upvote} className='img-fluid-icon' alt='like'></img>
               </Button>
               <Button>
-                <img src={Dislike} className='img-fluid-icon' alt='dislike'></img>
+                <img src={Dislike} onClick={Downvote} className='img-fluid-icon' alt='dislike'></img>
               </Button>
             </ButtonGroup>
           </Col>
