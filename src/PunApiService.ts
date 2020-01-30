@@ -7,7 +7,7 @@ type ServerError = {
 };
 
 const apiClient = axios.create({
-  baseURL: "https://repunsitoryapi.azurewebsites.net/api/Puns",
+  baseURL: "https://dev-api.repunsitory.com/api/Pun",
   responseType: "json",
   headers: {
     "Content-Type": "application/json"
